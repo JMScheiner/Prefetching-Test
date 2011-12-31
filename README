@@ -1,0 +1,10 @@
+Experiment with prefetching in a case where the typical prefetching
+behavior might be inadequate - i.e. the programmer knows a lot more about
+the access pattern then the cache.  Here the access pattern is fibonacci
+numbers - mod the size of the working set.
+
+Might want to pretty this up for more tests.
+
+Results with working set of 1G, 50000000 iterations:
+CPU time w/o prefetching: 6.919791s
+CPU time prefetching 32 ahead: 3.671016s
