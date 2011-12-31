@@ -52,6 +52,7 @@ void fibo_lookahead_foreach(long *data, uint64_t len, int iters,
     op_highest(data, len, buf[i_buf]);
     i_buf = inc_ring(i_buf, n);
   }
+  free(buf);
 }
 
 int inc_ring(int i, int n) {
@@ -110,5 +111,8 @@ int main(int argc, const char *argv[]) {
   // Results:
   // CPU time w/o prefetching: 6.919791
   // CPU time prefetching 32 ahead: 3.671016
-  return 0;
+
+  free(data0);
+  free(data1);
+  return EXIT_SUCCESS;
 }
